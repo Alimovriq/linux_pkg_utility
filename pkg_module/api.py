@@ -5,13 +5,13 @@ import requests
 TARGET_URL: str = "https://rdb.altlinux.org/api/export/branch_binary_packages/"
 
 
-def get_json() -> list[dict]:
+def get_json(first_branch: str, second_branch: str) -> list[dict | None]:
     """
-    Получает json по веткам sisyphus и p11
+    Получает json по двум веткам
     :return: список с данными по веткам
     """
     result_data = []
-    for branch in ["sisyphus", "p11"]:
+    for branch in [first_branch, second_branch]:
        url = f"{TARGET_URL}{branch}"
        try:
            request = requests.get(url)
