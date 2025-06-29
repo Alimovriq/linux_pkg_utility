@@ -48,7 +48,7 @@ sudo apt-get install ./package-name.rpm
 
 ### 5. Usage
 ```bash
-./cli.py [BRANCH1] [BRANCH2] [--output FILE.json]
+./cli_main.py [BRANCH1] [BRANCH2] [--output FILE.json]
 ```
 
 ### 6. Arguments
@@ -61,11 +61,11 @@ sudo apt-get install ./package-name.rpm
 ### 7. Examples
 1. Compare default branches (sisyphus vs p11):
 ```bash
-./cli.py
+./cli_main.py
 ```
 2. Compare specific branches with custom output:
 ```bash
-./cli.py branch1 branch2 --output comparison.json
+./cli_main.py branch1 branch2 --output comparison.json
 ```
 
 ### 8. Output Format
