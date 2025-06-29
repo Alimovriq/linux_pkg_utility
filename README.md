@@ -16,18 +16,24 @@ A Python CLI tool for comparing packages between ALT Linux branches via the publ
 
 ## Installation
 
-### 1. System Preparation
+### 1. Сlone the repository:
+```bash
+git clone git@github.com:Alimovriq/linux_pkg_utility.git
+cd linux_pkg_utility
+```
+
+### 2. System Preparation
 Update your system packages:
 ```bash
 sudo apt-get update && sudo apt-get upgrade
 ```
 
-### 2. Install Python Requests library (if doesn't exist)
+### 3. Install Python Requests library (if doesn't exist)
 ```bash
 sudo apt-get install python3-requests
 ```
 
-### 3. Install Required RPM Packages
+### 4. Install Required RPM Packages
 Download and install these packages manually:
 
 Package	Download URL
@@ -40,19 +46,19 @@ Install downloaded packages:
 sudo apt-get install ./package-name.rpm
 ```
 
-### 4. Usage
+### 5. Usage
 ```bash
 ./cli.py [BRANCH1] [BRANCH2] [--output FILE.json]
 ```
 
-### 5. Arguments
+### 6. Arguments
 | Argument       | Default      | Description                      |
 |---------------|-------------|----------------------------------|
 | `BRANCH1`     | `sisyphus`  | First branch to compare          |
 | `BRANCH2`     | `p11`       | Second branch to compare         |
 | `-o/--output` | `result.json` | Output JSON file path           |
 
-### 6. Examples
+### 7. Examples
 1. Compare default branches (sisyphus vs p11):
 ```bash
 ./cli.py
@@ -62,12 +68,12 @@ sudo apt-get install ./package-name.rpm
 ./cli.py branch1 branch2 --output comparison.json
 ```
 
-### 7. Output Format
+### 8. Output Format
 ```json 
 {
   "only_in_first_branch": [],
   "only_in_second_branch": [],
-  "newer_in_first_branch": []
+  "newest_in_first_branch": []
 }
 ```
 
