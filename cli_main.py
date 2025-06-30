@@ -77,8 +77,3 @@ def main() -> None:
 if __name__ == "__main__":
     logger.debug("Starting CLI-utility")
     main()
-
-    # добавил логгирование
-    # исправил баг с переменно first pkg in data_compare
-    # check_answer - цикл While True
-    #
