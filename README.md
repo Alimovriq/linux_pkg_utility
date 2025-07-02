@@ -35,12 +35,7 @@ apt-get install git
 
 *The system will ask to continue because it will download files. Press Y*
 
-### 2. Сlone the repository:
-```bash
-git clone git@github.com:Alimovriq/linux_pkg_utility.git
-```
-
-### 3. Install Required RPM Packages
+### 2. Install Required RPM Packages
 
 Download and install these packages manually:
 
@@ -64,19 +59,12 @@ type "exit" to exit the root user for safety
 exit
 ```
 
-### 4. Install Python Requests library (if doesn't exist)
-
-Check the pip package manager
+### 3. Сlone the repository:
 ```bash
-python3 -m ensurepip --upgrade
+git clone https://github.com/Alimovriq/linux_pkg_utility.git
 ```
 
-download and install Requests library
-```bash
-pip3 install requests
-```
-
-### 5. Usage
+### 4. Usage
 go to the linux_pkg_utility directory
 ```bash
 cd linux_pkg_utility
