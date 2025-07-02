@@ -16,24 +16,32 @@ A Python CLI tool for comparing packages between ALT Linux branches via the publ
 
 ## Installation
 
-### 1. Сlone the repository:
+### 1. System Preparation
+
+Enter the root user 
 ```bash
-git clone git@github.com:Alimovriq/linux_pkg_utility.git
-cd linux_pkg_utility
+su -
 ```
 
-### 2. System Preparation
 Update your system packages:
 ```bash
-sudo apt-get update && sudo apt-get upgrade
+apt-get update && apt-get upgrade --enable-upgrade
 ```
 
-### 3. Install Python Requests library (if doesn't exist)
+Download Git (if doesn't exist)
 ```bash
-sudo apt-get install python3-requests
+apt-get install git
 ```
 
-### 4. Install Required RPM Packages
+*The system will ask to continue because it will download files. Press Y*
+
+### 2. Сlone the repository:
+```bash
+git clone git@github.com:Alimovriq/linux_pkg_utility.git
+```
+
+### 3. Install Required RPM Packages
+
 Download and install these packages manually:
 
 Package	Download URL
@@ -41,12 +49,40 @@ Package	Download URL
 2. librpmbuild7 https://git.altlinux.org/tasks/327286/build/4100/x86_64/rpms/librpmbuild7-4.13.0.1-alt40.x86_64.rpm
 3. python3-module-rpm https://git.altlinux.org/tasks/324286/build/100/x86_64/rpms/python3-module-rpm-4.13.0.1-alt38.x86_64.rpm
 
+go to the download directory by root user, for example, "/Загрузки"
+```bash
+cd /home/<username>/Загрузки
+```
+
 Install downloaded packages:
 ```bash
-sudo apt-get install ./package-name.rpm
+apt-get install ./package-name.rpm
+```
+
+type "exit" to exit the root user for safety
+```bash
+exit
+```
+
+### 4. Install Python Requests library (if doesn't exist)
+
+Check the pip package manager
+```bash
+python3 -m ensurepip --upgrade
+```
+
+download and install Requests library
+```bash
+pip3 install requests
 ```
 
 ### 5. Usage
+go to the linux_pkg_utility directory
+```bash
+cd linux_pkg_utility
+```
+
+Launch
 ```bash
 ./cli_main.py [BRANCH1] [BRANCH2] [--output FILE.json]
 ```
@@ -76,5 +112,3 @@ sudo apt-get install ./package-name.rpm
   "newest_in_first_branch": []
 }
 ```
-
-
