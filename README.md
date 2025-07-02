@@ -75,14 +75,14 @@ Launch
 ./cli_main.py [BRANCH1] [BRANCH2] [--output FILE.json]
 ```
 
-### 6. Arguments
+### 5. Arguments
 | Argument       | Default      | Description                      |
 |---------------|-------------|----------------------------------|
 | `BRANCH1`     | `sisyphus`  | First branch to compare          |
 | `BRANCH2`     | `p11`       | Second branch to compare         |
 | `-o/--output` | `result.json` | Output JSON file path           |
 
-### 7. Examples
+### 6. Examples
 1. Compare default branches (sisyphus vs p11):
 ```bash
 ./cli_main.py
@@ -92,7 +92,7 @@ Launch
 ./cli_main.py branch1 branch2 --output comparison.json
 ```
 
-### 8. Output Format
+### 7. Output Format
 ```json 
 {
   "only_in_first_branch": [],
